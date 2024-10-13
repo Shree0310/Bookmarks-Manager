@@ -1,0 +1,24 @@
+name: dart_app
+description: An absolute bare-bones web app.
+version: 1.0.0
+# repository: https://github.com/my_org/my_repo
+
+environment:
+  sdk: '>=3.5.0 <4.0.0'
+
+# Add regular dependencies here.
+dependencies:
+  web: ^0.5.1
+  ngdart: ^8.0.0-dev.4
+  frontend_server_client: ^4.0.0 
+  ngforms: ^5.0.0-dev.3
+
+dev_dependencies:
+  ngtest: ^5.0.0-dev.3
+  build_runner: ^2.3.0
+  build_test: ^2.1.0    
+  build_web_compilers: ^4.0.11
+  test: ^1.22.0
+
+dependency_overrides:
+  dart_style: ^2.3.7
