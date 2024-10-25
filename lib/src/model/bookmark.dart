@@ -6,6 +6,13 @@ class Bookmark {
     this.edit = true,
   });
 
+  update(Bookmark bm) {
+    title = bm.title;
+    description = bm.description;
+    url = bm.url;
+    edit = bm.edit;
+  }
+
   String title;
   String description;
   String url;

@@ -1,11 +1,12 @@
 import 'package:ngdart/angular.dart';
 import 'package:ngforms/ngforms.dart';
 import '../model/bookmark.dart';
+import '../bookmark_form/bookmark_form_component.dart';
 
 @Component(
     selector: 'bookmark',
     templateUrl: 'bookmark_component.html',
-    directives: [coreDirectives, formDirectives])
+    directives: [coreDirectives, formDirectives, BookMarkFormComponent])
 class BookmarkComponent {
   final List bookmarks = [
     Bookmark(
@@ -31,13 +32,7 @@ class BookmarkComponent {
   late Bookmark editedBookmark;
 
   addBookmark() {
-    var bm = Bookmark();
-    bookmarks.add(bm);
-    editedBookmark = Bookmark(
-      title: bm.title,
-      description: bm.description,
-      url: bm.url,
-    );
+    bookmarks.add(Bookmark());
   }
 
   editBookmark(int index) {
@@ -48,13 +43,6 @@ class BookmarkComponent {
       edit: bookmarks[index].edit,
     );
     bookmarks[index].edit = true;
-  }
-
-  updateBookmark(int index) {
-    bookmarks[index].title = editedBookmark.title;
-    bookmarks[index].description = editedBookmark.description;
-    bookmarks[index].url = editedBookmark.url;
-    bookmarks[index].edit = false;
   }
 
   removeBookmark(int index) {
